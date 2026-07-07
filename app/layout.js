@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "UMKMMall — Mini Dashboard",
@@ -9,7 +10,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="id">
       <body className="antialiased bg-gray-50 min-h-screen">
-        <main className="p-4 sm:p-6">{children}</main>
+        <Navbar />
+        <main className="px-4 pb-6 sm:px-6">{children}</main>
       </body>
     </html>
   );
