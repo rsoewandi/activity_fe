@@ -107,7 +107,6 @@ export default function ActivityList({
     reload();
   }, [reload, refreshKey]);
 
-  // Load next batch when user scrolls past 60% of the internal list height.
   function handleScroll(e) {
     const el = e.currentTarget;
     const max = el.scrollHeight - el.clientHeight;
@@ -116,7 +115,6 @@ export default function ActivityList({
     if (ratio >= 0.6) loadMore();
   }
 
-  // Queue chain: after a batch finishes, if the scroll is still past 60%
   // (e.g. user is holding scroll at bottom), automatically fetch the next.
   useEffect(() => {
     if (loading || loadingMore || !hasMore || error) return;
@@ -154,7 +152,7 @@ export default function ActivityList({
             Activity Terbaru
           </h2>
           <p className="mt-0.5 text-xs text-gray-500">
-            Scroll list di atas 60% untuk memuat batch berikutnya. Total tampil:{" "}
+            Total tampil:{" "}
             <span className="font-semibold text-gray-700">{items.length}</span>
           </p>
         </div>
